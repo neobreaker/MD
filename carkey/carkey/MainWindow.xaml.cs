@@ -51,12 +51,12 @@ namespace carkey
                         winshlc.Show();
                         this.Close();
                         break;
-                    case "上海联合":
+                    case "上海联合一代":
                         WinSHLH1 winshlh1 = new WinSHLH1();
                         winshlh1.Show();
                         this.Close();
                         break;
-                    case "上海联合2代":
+                    case "上海联合二代":
                         WinSHLH2 winshlh2 = new WinSHLH2();
                         winshlh2.Show();
                         this.Close();

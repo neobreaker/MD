@@ -37,8 +37,80 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="1" Grid.Column="1">
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
-                    <Label Content="厂商型号：" Width="100" />
+                    <Label Content="Pin：" Width="100" />
+                    <TextBox Name="tbPin" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbPinBkp" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="秘钥码：" Width="100" />
+                    <TextBox Name="tbSecretKey" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbSecretKeyBkp" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="厂商代码：" Width="100" />
                     <TextBox Name="tbManufacturer" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbManufacturerBkp" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="车架号：" Width="100" />
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                        <TextBox Name="tbVIN" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                        <TextBox Name="tbVINASCII" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                        <TextBox Name="tbVINBkp" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                        <TextBox Name="tbVINBkpASCII" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    </StackPanel>
+                    
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="钥匙标识码1：" Width="100" />
+                    <TextBox Name="tbKeyIdentification1"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification1Bkp"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="钥匙标识码2：" Width="100" />
+                    <TextBox Name="tbKeyIdentification2"   TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification2Bkp"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="钥匙标识码3：" Width="100" />
+                    <TextBox Name="tbKeyIdentification3"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification3Bkp"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="钥匙标识码4：" Width="100" />
+                    <TextBox Name="tbKeyIdentification4"   TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification4Bkp"   TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="钥匙标识码5：" Width="100" />
+                    <TextBox Name="tbKeyIdentification5"   TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification5Bkp" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="钥匙标识码6：" Width="100" />
+                    <TextBox Name="tbKeyIdentification6"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification6Bkp"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="钥匙标识码7：" Width="100" />
+                    <TextBox Name="tbKeyIdentification7"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification7Bkp"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="钥匙标识码8：" Width="100" />
+                    <TextBox Name="tbKeyIdentification8"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification8Bkp"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="错误代码：" Width="100" />
+                    <TextBox Name="tbErrCode"   TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbErrCodeBkp"   TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="密码错误次数：" Width="100" />
+                    <TextBox Name="tbPwdErrCnt"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
                 </StackPanel>
             </StackPanel>
         </Grid>

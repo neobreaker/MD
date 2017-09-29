@@ -65,6 +65,7 @@
     <Compile Include="Common\Misc.cs" />
     <Compile Include="Model\ModelSH46.cs" />
     <Compile Include="Model\ModelSHLC.cs" />
+    <Compile Include="Model\ModelSHLH1.cs" />
     <Compile Include="UC\UCHexBox.xaml.cs">
       <DependentUpon>UCHexBox.xaml</DependentUpon>
     </Compile>
