@@ -47,7 +47,7 @@ namespace carkey.Model
 
         public ModelSHLC(byte[] bin)
         {
-            int i = 0x17, j = 0;
+            int i = 0x1c, j = 0;
 
             for(j = 0; j < 2; j++)
             {

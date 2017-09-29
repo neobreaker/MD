@@ -52,3 +52,7 @@ F:\md\MD\carkey\carkey\obj\x86\Debug\carkey_MarkupCompile.cache
 F:\md\MD\carkey\carkey\obj\x86\Debug\carkey.g.resources
 F:\md\MD\carkey\carkey\obj\x86\Debug\carkey.Properties.Resources.resources
 F:\md\MD\carkey\carkey\obj\x86\Debug\carkey.csproj.GenerateResource.Cache
+F:\md\MD\carkey\carkey\obj\x86\Debug\UC\UCHexBox.baml
+F:\md\MD\carkey\carkey\obj\x86\Debug\UC\UCHexBox.g.cs
+F:\md\MD\carkey\carkey\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+F:\md\MD\carkey\carkey\obj\x86\Debug\carkey_MarkupCompile.lref
