@@ -56,3 +56,7 @@ F:\md\MD\carkey\carkey\obj\x86\Debug\UC\UCHexBox.baml
 F:\md\MD\carkey\carkey\obj\x86\Debug\UC\UCHexBox.g.cs
 F:\md\MD\carkey\carkey\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
 F:\md\MD\carkey\carkey\obj\x86\Debug\carkey_MarkupCompile.lref
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinSHLH1.baml
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinSHLH1.g.cs
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinSHLH2.g.cs
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinSHLH2.baml

@@ -37,22 +37,22 @@
             <Label Content="F" Width="27" HorizontalContentAlignment="Center" VerticalAlignment="Center" Padding="0"></Label>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
-            <Label Content="0" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="1" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="2" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="3" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="4" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="5" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="6" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="7" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="8" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="9" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="A" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="B" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="C" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="D" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="E" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
-            <Label Content="F" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="00" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="10" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="20" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="30" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="40" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="50" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="60" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="70" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="80" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="90" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="A0" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="B0" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="C0" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="D0" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="E0" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
+            <Label Content="F0" Height="16" HorizontalAlignment="Center" Padding="0"></Label>
             
         </StackPanel>
         <WindowsFormsHost Grid.Row="1" Grid.Column="1">

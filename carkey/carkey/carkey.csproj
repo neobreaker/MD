@@ -74,6 +74,12 @@
     <Compile Include="View\WinSHLC.xaml.cs">
       <DependentUpon>WinSHLC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\WinSHLH1.xaml.cs">
+      <DependentUpon>WinSHLH1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinSHLH2.xaml.cs">
+      <DependentUpon>WinSHLH2.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -95,6 +101,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\WinSHLC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WinSHLH1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WinSHLH2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

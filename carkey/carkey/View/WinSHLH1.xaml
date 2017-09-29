@@ -1,0 +1,65 @@
+﻿<Window x:Class="carkey.View.WinSHLH1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:carkey.UC"
+        Title="WinSHLH1" Height="720" Width="1280" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="11" VerticalAlignment="Top" Margin="0">
+            <Menu Height="22" Name="menu1" Width="Auto" VerticalAlignment="Top" >
+                <MenuItem Header="文件">
+                    <MenuItem Header="打开加密文件" Name="menuOpenEncrypyFile" Click="menuOpenEncrypyFile_Click"/>
+                    <MenuItem Header="打开解密文件" Name="menuOpenDecrypyFile" Click="menuOpenDecrypyFile_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Grid Grid.Row="2" Grid.Column="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="厂商型号：" Width="100" />
+                    <TextBox Name="tbManufacturer" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="3"  Name="gdHex">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="470" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <Label Content="解密数据"></Label>
+                <uc:UCHexBox x:Name="uchbDecrypy"></uc:UCHexBox>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <Label Content="加密数据"></Label>
+                <uc:UCHexBox x:Name="uchbEncrypy"></uc:UCHexBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
