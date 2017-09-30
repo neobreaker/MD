@@ -257,5 +257,69 @@ namespace carkey.Model
             Misc.ConvertPrintHex(errcode_bkp, 6, ref errcode_bkp_str);
         }
 
+        public bool CheckConsistencyPin()
+        {
+            return Misc.IsArrayEqual(this.pin, this.pin_bkp);
+        }
+
+        public bool CheckConsistencySecretKey()
+        {
+            return Misc.IsArrayEqual(this.secretkey, this.secretkey_bkp);
+        }
+
+        public bool CheckConsistencyManufacturer()
+        {
+            return Misc.IsArrayEqual(this.manufacturer, this.manufacturer_bkp);
+        }
+
+        public bool CheckConsistencyVIN()
+        {
+            return Misc.IsArrayEqual(this.vin, this.vin_bkp);
+        }
+
+        public bool CheckConsistencyKeyidentification1()
+        {
+            return Misc.IsArrayEqual(this.keyidentification1, this.keyidentification1_bkp);
+        }
+
+        public bool CheckConsistencyKeyidentification2()
+        {
+            return Misc.IsArrayEqual(this.keyidentification2, this.keyidentification2_bkp);
+        }
+
+        public bool CheckConsistencyKeyidentification3()
+        {
+            return Misc.IsArrayEqual(this.keyidentification3, this.keyidentification3_bkp);
+        }
+
+        public bool CheckConsistencyKeyidentification4()
+        {
+            return Misc.IsArrayEqual(this.keyidentification4, this.keyidentification4_bkp);
+        }
+
+        public bool CheckConsistencyKeyidentification5()
+        {
+            return Misc.IsArrayEqual(this.keyidentification5, this.keyidentification5_bkp);
+        }
+
+        public bool CheckConsistencyKeyidentification6()
+        {
+            return Misc.IsArrayEqual(this.keyidentification6, this.keyidentification6_bkp);
+        }
+
+        public bool CheckConsistencyKeyidentification7()
+        {
+            return Misc.IsArrayEqual(this.keyidentification7, this.keyidentification7_bkp);
+        }
+
+        public bool CheckConsistencyKeyidentification8()
+        {
+            return Misc.IsArrayEqual(this.keyidentification8, this.keyidentification8_bkp);
+        }
+
+        public bool CheckConsistencyErrcode()
+        {
+            return Misc.IsArrayEqual(this.errcode, this.errcode_bkp);
+        }
     }
 }

@@ -1,0 +1,109 @@
+##############################################################################
+# Hex Workshop Color Map Definition File (cmap)
+#
+# General Format:
+#   <hex_sequence> | <charrange> = <color_definiton> [,<comment>]
+# 
+# <hex_sequence> 
+#  Defines a hex sequence.  The hex sequence must a valid quoted hex string
+#  and can represent between 1 to 32 bytes of data.
+#   
+#  Example:
+#    "00AABBCC"
+#
+# <charrange>
+#   Defines a range of characters in decimal.
+#
+#   For example, byte 0 to 32 is represented as:
+#     charrange(0, 32)
+#
+# <color_definition>
+#   Defines the color definition.  Each color definition is defined using an
+#   RGB tuple.  For example, RGB(<red>, <green>, <blue>), where each color
+#   component is a decimal value between 0 and 255.
+#
+#   RGB(<red>, <green>, <blue>)
+#     Defines the RGB value for either the foreground or background for
+#     both the hex and text/ascii areas.  This format is compatible with
+#     Hex Workshop v5.x and earlier.
+#
+#     To display all instances of 'DDDD' in black on yellow:
+#       "DDDD"=RGB(0, 0, 0), RGB(255, 255, 0)  
+#
+#   hexFgRGB(<red>, <green>, <blue>)
+#     Defines the hex foreground color.
+#  
+#   hexBgRGB(<red>, <green>, <blue>)
+#     Defines the hex background color.
+#
+#   hexRectRGB(<red>, <green>, <blue>)
+#     Defines the hex border rectangle color.
+#
+#   asciiFgRGB(<red>, <green>, <blue>)
+#     Defines the ascii foreground color.
+#
+#   asciiBgRGB(<red>, <green>, <blue>)
+#     Defines the ascii background color.
+#
+#   asciiRectRGB(<red>, <green>, <blue>)
+#     Defines the ascii border rectangle color.
+#
+# <comment>
+#    Defines a comment for a particular color mapping.  The comment is
+#    displayed in a tooltip when hovering the mouse cursor over rendered
+#    data in Hex Workshop.
+#
+#    Example:
+#        comment("My Color Mapping")
+#
+##############################################################################
+#
+# Examples:
+#
+# Displays all instances of "00000000" in White on Black:
+#   "00000000" = RGB(255, 255, 255), RGB(0, 0, 0)
+#
+# Displays all instances of "00000000" in a Red Rectangle:
+#   "00000000" = asciiRectRGB(255, 0, 0), hexRectRGB(255, 0, 0)
+#
+# Displays all instances of "00000000" in Blue on Yellow (hex) and Green on 
+# Yellow (ascii):
+#   "00000000" = asciiFgRGB(0, 255, 0), hexFgRGB(0, 0, 255), RGB(255, 255, 0)
+#
+# Displays all instances of "00000000" in Blue on Yellow (hex) and Green on 
+# gray (ascii):
+#   "00000000" = asciiFgRGB(0, 255, 0), hexFgRGB(0, 0, 255), asciiBgRGB(192, 192, 192), hexBgRGB(255, 255, 0)
+#
+# Displays all instances of "00000000" with a yellow background in the hex 
+# display and yellow border rectangle in the ascii display:
+#   "00000000" = hexBgRGB(255, 255, 0), asciiRectRGB(255, 255, 0)
+##
+
+"4C3654373834345338414E303235323538" = asciiBgRGB(0, 0, 128), hexBgRGB(0, 0, 128), comment("VIN码")
+"D09C87B96604C4DD3EA860BF9BB63EAF" = asciiBgRGB(128, 0, 128), hexBgRGB(128, 0, 128), comment("SK")
+"0096781005251352AA00FE" = asciiBgRGB(0, 128, 128), hexBgRGB(0, 128, 128), comment("软件代号不重要")
+"3637373131303430" = asciiBgRGB(160, 160, 164), hexBgRGB(160, 160, 164), comment("盒子编码")
+"574B3439363738" = asciiBgRGB(192, 192, 192), hexBgRGB(192, 192, 192), comment("盒子编码")
+"313030353239" = asciiBgRGB(0, 128, 0), hexBgRGB(0, 128, 0), comment("年月日信息")
+"0202232020" = asciiBgRGB(160, 160, 164), hexBgRGB(160, 160, 164), comment("盒子编码")
+"3B515D14" = asciiBgRGB(0, 0, 255), hexBgRGB(0, 0, 255), comment("第二把钥匙ID")
+"4745454C" = asciiBgRGB(0, 128, 0), hexBgRGB(0, 128, 0), comment("厂商标识")
+"093C5D14" = asciiBgRGB(255, 0, 0), hexBgRGB(255, 0, 0), comment("第一把钥匙ID")
+"E823" = asciiBgRGB(255, 0, 0), hexBgRGB(255, 0, 0), comment("PIN码")
+"48" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"3D" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"3E" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"E0" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"01" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"14" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"FA" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"FD" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"EB" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"ED" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"FB" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")
+"F2" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("PIN码校验")
+"13" = asciiBgRGB(0, 255, 255), hexBgRGB(0, 255, 255), comment("故障信息")
+"11" = asciiBgRGB(0, 255, 255), hexBgRGB(0, 255, 255), comment("故障信息")
+"C1" = asciiBgRGB(0, 255, 255), hexBgRGB(0, 255, 255), comment("故障信息")
+"C0" = asciiBgRGB(0, 255, 255), hexBgRGB(0, 255, 255), comment("故障信息")
+"CC" = asciiBgRGB(128, 0, 0), hexBgRGB(128, 0, 0), comment("校验")

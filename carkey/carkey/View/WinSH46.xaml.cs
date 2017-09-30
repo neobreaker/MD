@@ -336,8 +336,6 @@ namespace carkey.View
 
         private void SetcbActivateKeySelect()
         {
-            
-
             switch (m_decryptbytes[3])
             {
                 case 0x00:

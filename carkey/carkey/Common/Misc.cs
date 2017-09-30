@@ -93,6 +93,21 @@ namespace carkey.Common
             return (byte)check_sum; 
         }
 
+        public static byte CheckSumAccumulate(byte[] data, int len)
+        {
+            int check_sum = 0;
+            byte[] data_tmp = new byte[4];
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                check_sum += data[i];
+            }
+
+            check_sum = (byte)(check_sum & 0xff);
+
+            return (byte)check_sum;
+        }
+
         public static bool IsArrayEqual(byte[] lhs, byte[] rhs)
         {
             if (lhs.Length != rhs.Length)
@@ -109,6 +124,26 @@ namespace carkey.Common
         public static void ParseTextInput(string input_str, ref string[] out_str)
         {
             out_str = input_str.Split(' ');
+        }
+
+        public static void DoUpdateArray(byte[] array, int start, int length, string input_str)
+        {
+            int i = 0;
+            string[] str = new string[32];
+            byte[] tmp_byte = new byte[32];
+
+            Misc.ParseTextInput(input_str, ref str);
+
+            for (i = 0; i < length; i++)
+            {
+                if (str[i] == "")
+                    return;
+            }
+
+            for (i = 0; i < length; i++)
+            {
+                array[start + i] = Convert.ToByte(str[i], 16);
+            }
         }
     }
 }
