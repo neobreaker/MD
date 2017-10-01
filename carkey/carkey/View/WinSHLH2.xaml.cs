@@ -590,6 +590,16 @@ namespace carkey.View
             UpdateDisplay();
         }
 
+        private void UpdateDecrypt()
+        {
+
+        }
+
+        private void UpdateEncrypt()
+        {
+            EnOrDecryptBytes(m_decryptbytes, m_bytes_len, ref m_encryptbytes);
+        }
+
         private void btnPwdErrCnt_Click(object sender, RoutedEventArgs e)
         {
 
@@ -597,7 +607,9 @@ namespace carkey.View
 
         private void btnAlter_Click(object sender, RoutedEventArgs e)
         {
-
+            UpdateDecrypt();
+            UpdateEncrypt();
+            UpdateDisplay();
         }
 
         private void btnExportDecrypt_Click(object sender, RoutedEventArgs e)
