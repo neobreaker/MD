@@ -902,6 +902,7 @@ namespace carkey.View
             string fix_log = "";
             fix_log = FixData();
             this.tbInfo.Text = fix_log;
+            UpdateDisplay();
         }
 
         private void UpdateManufacturer()

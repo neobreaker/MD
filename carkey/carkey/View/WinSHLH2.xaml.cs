@@ -28,6 +28,9 @@ namespace carkey.View
         private byte[] m_encryptbytes = new byte[BYTE_BUFF_SIZE];
         private byte[] m_decryptbytes = new byte[BYTE_BUFF_SIZE];
 
+        private Model.ModelSHLH2 m_shlh2 = null
+;
+
         public WinSHLH2()
         {
             InitializeComponent();
@@ -47,47 +50,47 @@ namespace carkey.View
             }
         }
 
-        private void CheckDataValid(ModelSHLH2 shlh2)
+        private void CheckDataValid(ModelSHLH2 m_shlh2)
         {
-            if (shlh2.CheckPin())
+            if (m_shlh2.CheckPin())
                 this.tbPin.Background = new SolidColorBrush(Colors.White);
             else
                 this.tbPin.Background = new SolidColorBrush(Colors.Red);
 
-            if (shlh2.CheckSecretKey())
+            if (m_shlh2.CheckSecretKey())
                 this.tbSecretKey.Background = new SolidColorBrush(Colors.White);
             else
                 this.tbSecretKey.Background = new SolidColorBrush(Colors.Red);
 
-            if (shlh2.CheckKeyIdentification1())
+            if (m_shlh2.CheckKeyIdentification1())
                 this.tbKeyIdentification1.Background = new SolidColorBrush(Colors.White);
             else
                 this.tbKeyIdentification1.Background = new SolidColorBrush(Colors.Red);
 
-            if (shlh2.CheckKeyIdentification2())
+            if (m_shlh2.CheckKeyIdentification2())
                 this.tbKeyIdentification2.Background = new SolidColorBrush(Colors.White);
             else
                 this.tbKeyIdentification2.Background = new SolidColorBrush(Colors.Red);
 
-            if (shlh2.CheckKeyIdentification3())
+            if (m_shlh2.CheckKeyIdentification3())
                 this.tbKeyIdentification3.Background = new SolidColorBrush(Colors.White);
             else
                 this.tbKeyIdentification3.Background = new SolidColorBrush(Colors.Red);
 
-            if (shlh2.CheckKeyIdentification4())
+            if (m_shlh2.CheckKeyIdentification4())
                 this.tbKeyIdentification4.Background = new SolidColorBrush(Colors.White);
             else
                 this.tbKeyIdentification4.Background = new SolidColorBrush(Colors.Red);
 
-            if (shlh2.CheckKeyIdentification5())
+            if (m_shlh2.CheckKeyIdentification5())
                 this.tbKeyIdentification5.Background = new SolidColorBrush(Colors.White);
             else
                 this.tbKeyIdentification5.Background = new SolidColorBrush(Colors.Red);
 
 
-            if (shlh2.CheckPinBkp())
+            if (m_shlh2.CheckPinBkp())
             {
-                if (shlh2.CheckConsistencyPin())
+                if (m_shlh2.CheckConsistencyPin())
                 {
                     this.tbPinBkp.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
                 }
@@ -101,9 +104,9 @@ namespace carkey.View
                 this.tbPinBkp.Background = new SolidColorBrush(Colors.Red);
             }
 
-            if (shlh2.CheckSecretKeyBkp())
+            if (m_shlh2.CheckSecretKeyBkp())
             {
-                if (shlh2.CheckConsistencySecretKey())
+                if (m_shlh2.CheckConsistencySecretKey())
                 {
                     this.tbSecretKeyBkp.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
                 }
@@ -117,9 +120,9 @@ namespace carkey.View
                 this.tbSecretKeyBkp.Background = new SolidColorBrush(Colors.Red);
             }
 
-            if (shlh2.CheckKeyIdentification1Bkp())
+            if (m_shlh2.CheckKeyIdentification1Bkp())
             {
-                if (shlh2.CheckConsistencyKeyId1())
+                if (m_shlh2.CheckConsistencyKeyId1())
                 {
                     this.tbKeyIdentification1Bkp.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
                 }
@@ -133,9 +136,9 @@ namespace carkey.View
                 this.tbKeyIdentification1Bkp.Background = new SolidColorBrush(Colors.Red);
             }
 
-            if (shlh2.CheckKeyIdentification2Bkp())
+            if (m_shlh2.CheckKeyIdentification2Bkp())
             {
-                if (shlh2.CheckConsistencyKeyId2())
+                if (m_shlh2.CheckConsistencyKeyId2())
                 {
                     this.tbKeyIdentification2Bkp.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
                 }
@@ -149,9 +152,9 @@ namespace carkey.View
                 this.tbKeyIdentification2Bkp.Background = new SolidColorBrush(Colors.Red);
             }
 
-            if (shlh2.CheckKeyIdentification3Bkp())
+            if (m_shlh2.CheckKeyIdentification3Bkp())
             {
-                if (shlh2.CheckConsistencyKeyId3())
+                if (m_shlh2.CheckConsistencyKeyId3())
                 {
                     this.tbKeyIdentification3Bkp.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
                 }
@@ -165,9 +168,9 @@ namespace carkey.View
                 this.tbKeyIdentification3Bkp.Background = new SolidColorBrush(Colors.Red);
             }
 
-            if (shlh2.CheckKeyIdentification4Bkp())
+            if (m_shlh2.CheckKeyIdentification4Bkp())
             {
-                if (shlh2.CheckConsistencyKeyId4())
+                if (m_shlh2.CheckConsistencyKeyId4())
                 {
                     this.tbKeyIdentification4Bkp.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
                 }
@@ -181,9 +184,9 @@ namespace carkey.View
                 this.tbKeyIdentification4Bkp.Background = new SolidColorBrush(Colors.Red);
             }
 
-            if (shlh2.CheckKeyIdentification5Bkp())
+            if (m_shlh2.CheckKeyIdentification5Bkp())
             {
-                if (shlh2.CheckConsistencyKeyId5())
+                if (m_shlh2.CheckConsistencyKeyId5())
                 {
                     this.tbKeyIdentification5Bkp.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
                 }
@@ -200,34 +203,35 @@ namespace carkey.View
 
         private void UpdateDisplay()
         {
-            Model.ModelSHLH2 shlh2 = new ModelSHLH2(m_decryptbytes);
 
-            this.tbPin.Text = shlh2.pin_str;
-            this.tbSecretKey.Text = shlh2.secretkey_str;
-            this.tbKeyIdentification1.Text = shlh2.keyidentification1_str;
-            this.tbKeyIdentification2.Text = shlh2.keyidentification2_str;
-            this.tbKeyIdentification3.Text = shlh2.keyidentification3_str;
-            this.tbKeyIdentification4.Text = shlh2.keyidentification3_str;
-            this.tbKeyIdentification5.Text = shlh2.keyidentification3_str;
-            this.tbVIN.Text = shlh2.vin_str;
-            this.tbVINASCII.Text = shlh2.vin_ascii;
-            this.tbPwdErrCnt.Text = shlh2.pwderrcnt_str;
+            m_shlh2 = new ModelSHLH2(m_decryptbytes);
+
+            this.tbPin.Text = m_shlh2.pin_str;
+            this.tbSecretKey.Text = m_shlh2.secretkey_str;
+            this.tbKeyIdentification1.Text = m_shlh2.keyidentification1_str;
+            this.tbKeyIdentification2.Text = m_shlh2.keyidentification2_str;
+            this.tbKeyIdentification3.Text = m_shlh2.keyidentification3_str;
+            this.tbKeyIdentification4.Text = m_shlh2.keyidentification3_str;
+            this.tbKeyIdentification5.Text = m_shlh2.keyidentification3_str;
+            this.tbVIN.Text = m_shlh2.vin_str;
+            this.tbVINASCII.Text = m_shlh2.vin_ascii;
+            this.tbPwdErrCnt.Text = m_shlh2.pwderrcnt_str;
 
             //back up
-            this.tbPinBkp.Text = shlh2.pin_str_bkp;
-            this.tbSecretKeyBkp.Text = shlh2.secretkey_str_bkp;
-            this.tbKeyIdentification1Bkp.Text = shlh2.keyidentification1_str_bkp;
-            this.tbKeyIdentification2Bkp.Text = shlh2.keyidentification2_str_bkp;
-            this.tbKeyIdentification3Bkp.Text = shlh2.keyidentification3_str_bkp;
-            this.tbKeyIdentification4Bkp.Text = shlh2.keyidentification3_str_bkp;
-            this.tbKeyIdentification5Bkp.Text = shlh2.keyidentification3_str_bkp;
-            this.tbVINBkp.Text = shlh2.vin_str_bkp;
-            this.tbVINBkpASCII.Text = shlh2.vin_ascii_bkp;
+            this.tbPinBkp.Text = m_shlh2.pin_str_bkp;
+            this.tbSecretKeyBkp.Text = m_shlh2.secretkey_str_bkp;
+            this.tbKeyIdentification1Bkp.Text = m_shlh2.keyidentification1_str_bkp;
+            this.tbKeyIdentification2Bkp.Text = m_shlh2.keyidentification2_str_bkp;
+            this.tbKeyIdentification3Bkp.Text = m_shlh2.keyidentification3_str_bkp;
+            this.tbKeyIdentification4Bkp.Text = m_shlh2.keyidentification3_str_bkp;
+            this.tbKeyIdentification5Bkp.Text = m_shlh2.keyidentification3_str_bkp;
+            this.tbVINBkp.Text = m_shlh2.vin_str_bkp;
+            this.tbVINBkpASCII.Text = m_shlh2.vin_ascii_bkp;
 
             this.uchbDecrypy.SetHexbox(m_decryptbytes);
             this.uchbEncrypy.SetHexbox(m_encryptbytes);
 
-            CheckDataValid(shlh2);
+            CheckDataValid(m_shlh2);
         }
 
         private void LoadData()
@@ -255,6 +259,7 @@ namespace carkey.View
             }
         }
 
+
         private void menuOpenDecrypyFile_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -273,6 +278,336 @@ namespace carkey.View
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        private void FixPin(StringBuilder log)
+        {
+            string fix = "PIN";
+
+            log.Append("检查" + fix + "数据...");
+            if (m_shlh2.CheckPin())
+            {
+                log.Append("正确\n检查备份" + fix + "数据...");
+                if (m_shlh2.CheckPinBkp() && m_shlh2.CheckConsistencyPin())
+                {
+                    //all ok
+                    log.Append("正确\n");
+                }
+                else
+                {
+                    //back up error
+                    log.Append("错误\n修复备份" + fix + "数据...成功\n");
+                    Array.Copy(m_shlh2.pin, m_shlh2.pin_bkp, m_shlh2.pin.Length);
+                    m_shlh2.pin_ver_bkp = m_shlh2.pin_ver;
+                }
+            }
+            else
+            {
+                log.Append("错误\n尝试使用备份数据修复...");
+                if( m_shlh2.CheckPinBkp() )
+                {
+                    //back up ok
+                    log.Append("成功\n");
+                    Array.Copy(m_shlh2.pin_bkp, m_shlh2.pin, m_shlh2.pin_bkp.Length);
+                    m_shlh2.pin_ver = m_shlh2.pin_ver_bkp;
+                }
+                else
+                {
+                    //all error
+                    log.Append("失败\n");
+                }
+            }
+        }
+
+        private void FixSecretKey(StringBuilder log)
+        {
+            string fix = "秘钥码";
+
+            log.Append("检查" + fix + "数据...");
+            if (m_shlh2.CheckSecretKey())
+            {
+                log.Append("正确\n检查备份" + fix + "数据...");
+                if (m_shlh2.CheckSecretKeyBkp() && m_shlh2.CheckConsistencySecretKey())
+                {
+                    //all ok
+                    log.Append("正确\n");
+                }
+                else
+                {
+                    //back up error
+                    log.Append("错误\n修复备份" + fix + "数据...成功\n");
+                    Array.Copy(m_shlh2.secretkey, m_shlh2.secretkey_bkp, m_shlh2.secretkey.Length);
+                    m_shlh2.secretkey_ver_bkp = m_shlh2.secretkey_ver;
+                }
+            }
+            else
+            {
+                log.Append("错误\n尝试使用备份数据修复...");
+                if (m_shlh2.CheckSecretKeyBkp() )
+                {
+                    //back up ok
+                    log.Append("成功\n");
+                    Array.Copy(m_shlh2.secretkey_bkp, m_shlh2.secretkey, m_shlh2.secretkey_bkp.Length);
+                    m_shlh2.secretkey_ver = m_shlh2.secretkey_ver_bkp;
+                }
+                else
+                {
+                    //all error
+                    log.Append("失败\n");
+                }
+            }
+        }
+
+        private void Fixkeyidentification1(StringBuilder log)
+        {
+            string fix = "钥匙标识码1";
+
+            log.Append("检查" + fix + "数据...");
+            if (m_shlh2.CheckKeyIdentification1())
+            {
+                log.Append("正确\n检查备份" + fix + "数据...");
+                if (m_shlh2.CheckKeyIdentification1Bkp() && m_shlh2.CheckConsistencyKeyId1())
+                {
+                    //all ok
+                    log.Append("正确\n");
+                }
+                else
+                {
+                    //back up error
+                    log.Append("错误\n修复备份" + fix + "数据...成功\n");
+                    Array.Copy(m_shlh2.keyidentification1, m_shlh2.keyidentification1_bkp, m_shlh2.keyidentification1.Length);
+                    m_shlh2.keyidentification1_ver_bkp = m_shlh2.keyidentification1_ver;
+                }
+            }
+            else
+            {
+                log.Append("错误\n尝试使用备份数据修复...");
+                if (m_shlh2.CheckKeyIdentification1Bkp())
+                {
+                    //back up ok
+                    log.Append("成功\n");
+                    Array.Copy(m_shlh2.keyidentification1_bkp, m_shlh2.keyidentification1, m_shlh2.keyidentification1_bkp.Length);
+                    m_shlh2.keyidentification1_ver = m_shlh2.keyidentification1_ver_bkp;
+                }
+                else
+                {
+                    //all error
+                    log.Append("失败\n");
+                }
+            }
+        }
+
+        private void Fixkeyidentification2(StringBuilder log)
+        {
+            string fix = "钥匙标识码2";
+
+            log.Append("检查" + fix + "数据...");
+            if (m_shlh2.CheckKeyIdentification2())
+            {
+                log.Append("正确\n检查备份" + fix + "数据...");
+                if (m_shlh2.CheckKeyIdentification2Bkp() && m_shlh2.CheckConsistencyKeyId2())
+                {
+                    //all ok
+                    log.Append("正确\n");
+                }
+                else
+                {
+                    //back up error
+                    log.Append("错误\n修复备份" + fix + "数据...成功\n");
+                    Array.Copy(m_shlh2.keyidentification2, m_shlh2.keyidentification2_bkp, m_shlh2.keyidentification2.Length);
+                    m_shlh2.keyidentification2_ver_bkp = m_shlh2.keyidentification2_ver;
+                }
+            }
+            else
+            {
+                log.Append("错误\n尝试使用备份数据修复...");
+                if (m_shlh2.CheckKeyIdentification2Bkp())
+                {
+                    //back up ok
+                    log.Append("成功\n");
+                    Array.Copy(m_shlh2.keyidentification2_bkp, m_shlh2.keyidentification2, m_shlh2.keyidentification2_bkp.Length);
+                    m_shlh2.keyidentification2_ver = m_shlh2.keyidentification2_ver_bkp;
+                }
+                else
+                {
+                    //all error
+                    log.Append("失败\n");
+                }
+            }
+        }
+
+        private void Fixkeyidentification3(StringBuilder log)
+        {
+            string fix = "钥匙标识码3";
+
+            log.Append("检查" + fix + "数据...");
+            if (m_shlh2.CheckKeyIdentification3())
+            {
+                log.Append("正确\n检查备份" + fix + "数据...");
+                if (m_shlh2.CheckKeyIdentification3Bkp() && m_shlh2.CheckConsistencyKeyId3())
+                {
+                    //all ok
+                    log.Append("正确\n");
+                }
+                else
+                {
+                    //back up error
+                    log.Append("错误\n修复备份" + fix + "数据...成功\n");
+                    Array.Copy(m_shlh2.keyidentification3, m_shlh2.keyidentification3_bkp, m_shlh2.keyidentification3.Length);
+                    m_shlh2.keyidentification3_ver_bkp = m_shlh2.keyidentification3_ver;
+                }
+            }
+            else
+            {
+                log.Append("错误\n尝试使用备份数据修复...");
+                if (m_shlh2.CheckKeyIdentification3Bkp())
+                {
+                    //back up ok
+                    log.Append("成功\n");
+                    Array.Copy(m_shlh2.keyidentification3_bkp, m_shlh2.keyidentification3, m_shlh2.keyidentification3_bkp.Length);
+                    m_shlh2.keyidentification3_ver = m_shlh2.keyidentification3_ver_bkp;
+                }
+                else
+                {
+                    //all error
+                    log.Append("失败\n");
+                }
+            }
+        }
+
+        private void Fixkeyidentification4(StringBuilder log)
+        {
+            string fix = "钥匙标识码4";
+
+            log.Append("检查" + fix + "数据...");
+            if (m_shlh2.CheckKeyIdentification4())
+            {
+                log.Append("正确\n检查备份" + fix + "数据...");
+                if (m_shlh2.CheckKeyIdentification4Bkp() && m_shlh2.CheckConsistencyKeyId4())
+                {
+                    //all ok
+                    log.Append("正确\n");
+                }
+                else
+                {
+                    //back up error
+                    log.Append("错误\n修复备份" + fix + "数据...成功\n");
+                    Array.Copy(m_shlh2.keyidentification4, m_shlh2.keyidentification4_bkp, m_shlh2.keyidentification4.Length);
+                    m_shlh2.keyidentification4_ver_bkp = m_shlh2.keyidentification4_ver;
+                }
+            }
+            else
+            {
+                log.Append("错误\n尝试使用备份数据修复...");
+                if (m_shlh2.CheckKeyIdentification4Bkp())
+                {
+                    //back up ok
+                    log.Append("成功\n");
+                    Array.Copy(m_shlh2.keyidentification4_bkp, m_shlh2.keyidentification4, m_shlh2.keyidentification4_bkp.Length);
+                    m_shlh2.keyidentification4_ver = m_shlh2.keyidentification4_ver_bkp;
+                }
+                else
+                {
+                    //all error
+                    log.Append("失败\n");
+                }
+            }
+        }
+
+        private void Fixkeyidentification5(StringBuilder log)
+        {
+            string fix = "钥匙标识码5";
+
+            log.Append("检查" + fix + "数据...");
+            if (m_shlh2.CheckKeyIdentification5())
+            {
+                log.Append("正确\n检查备份" + fix + "数据...");
+                if (m_shlh2.CheckKeyIdentification5Bkp() && m_shlh2.CheckConsistencyKeyId5())
+                {
+                    //all ok
+                    log.Append("正确\n");
+                }
+                else
+                {
+                    //back up error
+                    log.Append("错误\n修复备份" + fix + "数据...成功\n");
+                    Array.Copy(m_shlh2.keyidentification5, m_shlh2.keyidentification5_bkp, m_shlh2.keyidentification5.Length);
+                    m_shlh2.keyidentification5_ver_bkp = m_shlh2.keyidentification5_ver;
+                }
+            }
+            else
+            {
+                log.Append("错误\n尝试使用备份数据修复...");
+                if (m_shlh2.CheckKeyIdentification5Bkp())
+                {
+                    //back up ok
+                    log.Append("成功\n");
+                    Array.Copy(m_shlh2.keyidentification5_bkp, m_shlh2.keyidentification5, m_shlh2.keyidentification5_bkp.Length);
+                    m_shlh2.keyidentification5_ver = m_shlh2.keyidentification5_ver_bkp;
+                }
+                else
+                {
+                    //all error
+                    log.Append("失败\n");
+                }
+            }
+        }
+
+        private void FixVin(StringBuilder log)
+        {
+            string fix = "车架号";
+
+            log.Append("检查" + fix + "数据...");
+            if (m_shlh2.CheckConsistencyVin())
+            {
+                log.Append("正确\n");
+            }
+            else
+            {
+                log.Append("错误\n尝试使用备份数据修复...成功");
+                Array.Copy(m_shlh2.vin_bkp, m_shlh2.vin, m_shlh2.vin_bkp.Length);
+            }
+        }
+
+        private int FixData(StringBuilder sblog)
+        {
+            FixPin(sblog);
+            FixSecretKey(sblog);
+            Fixkeyidentification1(sblog);
+            Fixkeyidentification2(sblog);
+            Fixkeyidentification3(sblog);
+            Fixkeyidentification4(sblog);
+            Fixkeyidentification5(sblog);
+            FixVin(sblog);
+            return 0;
+        }
+
+        private void btnFix_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder sblog = new StringBuilder(512);
+            FixData(sblog);
+            this.tbInfo.Text = sblog.ToString();
+            UpdateDisplay();
+        }
+
+        private void btnPwdErrCnt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAlter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnExportDecrypt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnExportEncrypt_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

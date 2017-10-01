@@ -326,5 +326,10 @@ namespace carkey.Model
         {
             return Misc.IsArrayEqual(this.keyidentification5, this.keyidentification5_bkp);
         }
+
+        public bool CheckConsistencyVin()
+        {
+            return Misc.IsArrayEqual(this.vin, this.vin_bkp);
+        }
     }
 }
