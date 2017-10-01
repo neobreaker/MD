@@ -121,7 +121,10 @@
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
-                    <TextBox Name="tbInfo" Text="" IsReadOnly="True" TextWrapping="Wrap" TextAlignment="Left" Width="350" Height="200" />
+                    <ScrollViewer Width="350" Height="200" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <TextBox Name="tbInfo" Text="" IsReadOnly="True" TextWrapping="Wrap" TextAlignment="Left"  />
+                    </ScrollViewer>
+                    
                 </StackPanel>
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Button Name="btnFix"   Content="修复" FontSize="20" Height="80" Width="130" Margin="20 0 0 0" Click="btnFix_Click" />
