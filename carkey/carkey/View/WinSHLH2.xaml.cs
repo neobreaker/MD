@@ -87,6 +87,8 @@ namespace carkey.View
             else
                 this.tbKeyIdentification5.Background = new SolidColorBrush(Colors.Red);
 
+            this.tbVIN.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
+
 
             if (m_shlh2.CheckPinBkp())
             {
@@ -199,6 +201,17 @@ namespace carkey.View
             {
                 this.tbKeyIdentification5Bkp.Background = new SolidColorBrush(Colors.Red);
             }
+
+            if (m_shlh2.CheckConsistencyVin())
+            {
+                this.tbVINBkp.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
+                this.tbVINBkpASCII.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
+            }
+            else
+            {
+                this.tbVINBkp.Background = new SolidColorBrush(Colors.Yellow);
+                this.tbVINBkpASCII.Background = new SolidColorBrush(Colors.Yellow);
+            }
         }
 
         private void UpdateDisplay()
@@ -211,8 +224,8 @@ namespace carkey.View
             this.tbKeyIdentification1.Text = m_shlh2.keyidentification1_str;
             this.tbKeyIdentification2.Text = m_shlh2.keyidentification2_str;
             this.tbKeyIdentification3.Text = m_shlh2.keyidentification3_str;
-            this.tbKeyIdentification4.Text = m_shlh2.keyidentification3_str;
-            this.tbKeyIdentification5.Text = m_shlh2.keyidentification3_str;
+            this.tbKeyIdentification4.Text = m_shlh2.keyidentification4_str;
+            this.tbKeyIdentification5.Text = m_shlh2.keyidentification5_str;
             this.tbVIN.Text = m_shlh2.vin_str;
             this.tbVINASCII.Text = m_shlh2.vin_ascii;
             this.tbPwdErrCnt.Text = m_shlh2.pwderrcnt_str;
@@ -223,8 +236,8 @@ namespace carkey.View
             this.tbKeyIdentification1Bkp.Text = m_shlh2.keyidentification1_str_bkp;
             this.tbKeyIdentification2Bkp.Text = m_shlh2.keyidentification2_str_bkp;
             this.tbKeyIdentification3Bkp.Text = m_shlh2.keyidentification3_str_bkp;
-            this.tbKeyIdentification4Bkp.Text = m_shlh2.keyidentification3_str_bkp;
-            this.tbKeyIdentification5Bkp.Text = m_shlh2.keyidentification3_str_bkp;
+            this.tbKeyIdentification4Bkp.Text = m_shlh2.keyidentification4_str_bkp;
+            this.tbKeyIdentification5Bkp.Text = m_shlh2.keyidentification5_str_bkp;
             this.tbVINBkp.Text = m_shlh2.vin_str_bkp;
             this.tbVINBkpASCII.Text = m_shlh2.vin_ascii_bkp;
 
@@ -590,9 +603,117 @@ namespace carkey.View
             UpdateDisplay();
         }
 
+        private void UpdateField(int field_idx, int field_bkp_idx, int field_ver_idx, int field_ver_idx_bkp, string input_str, int num)
+        {
+            int i = 0;
+            string[] str = new string[32];
+            byte[] tmp_byte = new byte[32];
+
+            Misc.ParseTextInput(input_str, ref str);
+
+            for (i = 0; i < num; i++)
+            {
+                if (str[i] == "")
+                    return;
+            }
+
+            for (i = 0; i < num; i++)
+            {
+                this.m_decryptbytes[field_idx + i] = Convert.ToByte(str[i], 16);
+                this.m_decryptbytes[field_bkp_idx + i] = this.m_decryptbytes[field_idx + i];
+            }
+
+            for (i = 0; i < num; i++)
+            {
+                tmp_byte[i] = this.m_decryptbytes[field_idx + i];
+            }
+
+            this.m_decryptbytes[field_ver_idx] = Misc.CheckSumAccumulate(tmp_byte, num);
+            this.m_decryptbytes[field_ver_idx_bkp] = this.m_decryptbytes[field_ver_idx];
+        }
+
+        private void UpdatePIN()
+        {
+            int field_idx = 0x00, field_bkp_idx = 0x80, field_ver_idx = 0x04, field_ver_idx_bkp = 0x84, field_len = 4;
+
+            UpdateField(field_idx, field_bkp_idx, field_ver_idx, field_ver_idx_bkp, this.tbPin.Text, field_len);
+        }
+
+        private void UpdateSecretKey()
+        {
+            int field_idx = 0x06, field_bkp_idx = 0x86, field_ver_idx = 0x0e, field_ver_idx_bkp = 0x8e, field_len = 8;
+
+            UpdateField(field_idx, field_bkp_idx, field_ver_idx, field_ver_idx_bkp, this.tbSecretKey.Text, field_len);
+        }
+
+        private void UpdateKeyIdentification1()
+        {
+            int field_idx = 0x10, field_bkp_idx = 0x90, field_ver_idx = 0x14, field_ver_idx_bkp = 0x94, field_len = 4;
+
+            UpdateField(field_idx, field_bkp_idx, field_ver_idx, field_ver_idx_bkp, this.tbKeyIdentification1.Text, field_len);
+        }
+
+        private void UpdateKeyIdentification2()
+        {
+            int field_idx = 0x15, field_bkp_idx = 0x95, field_ver_idx = 0x19, field_ver_idx_bkp = 0x99, field_len = 4;
+
+            UpdateField(field_idx, field_bkp_idx, field_ver_idx, field_ver_idx_bkp, this.tbKeyIdentification2.Text, field_len);
+        }
+
+        private void UpdateKeyIdentification3()
+        {
+            int field_idx = 0x1a, field_bkp_idx = 0x9a, field_ver_idx = 0x1e, field_ver_idx_bkp = 0x9e, field_len = 4;
+
+            UpdateField(field_idx, field_bkp_idx, field_ver_idx, field_ver_idx_bkp, this.tbKeyIdentification3.Text, field_len);
+        }
+
+        private void UpdateKeyIdentification4()
+        {
+            int field_idx = 0x20, field_bkp_idx = 0xa0, field_ver_idx = 0x24, field_ver_idx_bkp = 0xa4, field_len = 4;
+
+            UpdateField(field_idx, field_bkp_idx, field_ver_idx, field_ver_idx_bkp, this.tbKeyIdentification4.Text, field_len);
+        }
+
+        private void UpdateKeyIdentification5()
+        {
+            int field_idx = 0x25, field_bkp_idx = 0xa5, field_ver_idx = 0x29, field_ver_idx_bkp = 0xa9, field_len = 4;
+
+            UpdateField(field_idx, field_bkp_idx, field_ver_idx, field_ver_idx_bkp, this.tbKeyIdentification5.Text, field_len);
+        }
+
+        private void UpdateVIN()
+        {
+            int i = 0;
+            int field_idx = 0x30, field_idx_bkp = 0xb0, field_len = 17;
+
+            System.Text.ASCIIEncoding ASCII = new System.Text.ASCIIEncoding();
+            Byte[] vin = ASCII.GetBytes(this.tbVINASCII.Text);
+
+            for (i = 0; i < field_len; i++)
+            {
+                this.m_decryptbytes[field_idx + i] = vin[i];
+                this.m_decryptbytes[field_idx_bkp + i] = vin[i];
+            }
+        }
+
+        private void UpdatePwdErrCnt()
+        {
+            int field_idx = 0xf5, field_len = 4;
+
+            Misc.DoUpdateArray(m_decryptbytes, field_idx, field_len, this.tbPwdErrCnt.Text);
+        }
+
         private void UpdateDecrypt()
         {
-
+            UpdatePIN();
+            UpdateSecretKey();
+            UpdateKeyIdentification1();
+            UpdateKeyIdentification2();
+            UpdateKeyIdentification3();
+            UpdateKeyIdentification4();
+            UpdateKeyIdentification5();
+            UpdateVIN();
+            UpdatePwdErrCnt();
         }
 
         private void UpdateEncrypt()
@@ -602,7 +723,14 @@ namespace carkey.View
 
         private void btnPwdErrCnt_Click(object sender, RoutedEventArgs e)
         {
+            int field_idx = 0xf5, field_len = 4;
 
+            for (int i = 0; i < field_len; i++)
+            {
+                m_decryptbytes[field_idx + i] = 0x6a;
+            }
+            UpdateEncrypt();
+            UpdateDisplay();
         }
 
         private void btnAlter_Click(object sender, RoutedEventArgs e)
@@ -614,12 +742,131 @@ namespace carkey.View
 
         private void btnExportDecrypt_Click(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog saveDecryptDialog = new SaveFileDialog();
+            saveDecryptDialog.Filter = "bin|*.BIN" + "|AllFiles|*.*";
 
+            var result = saveDecryptDialog.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                string file_path = saveDecryptDialog.FileName;
+                FileStream fs = new FileStream(file_path, FileMode.OpenOrCreate);
+                fs.Write(m_decryptbytes, 0, m_bytes_len);
+                fs.Flush();
+                fs.Close();
+            }
         }
 
         private void btnExportEncrypt_Click(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog saveDecryptDialog = new SaveFileDialog();
+            saveDecryptDialog.Filter = "bin|*.BIN" + "|AllFiles|*.*";
 
+            var result = saveDecryptDialog.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                string file_path = saveDecryptDialog.FileName;
+                FileStream fs = new FileStream(file_path, FileMode.OpenOrCreate);
+                fs.Write(m_encryptbytes, 0, m_bytes_len);
+                fs.Flush();
+                fs.Close();
+            }
         }
+
+        private void tbPin_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x00, 4);
+        }
+
+        private void tbPinBkp_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x80, 4);
+        }
+
+        private void tbSecretKey_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x06, 8);
+        }
+
+        private void tbSecretKeyBkp_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x86, 8);
+        }
+
+        private void tbKeyIdentification1_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x10, 4);
+        }
+
+        private void tbKeyIdentification1Bkp_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x90, 4);
+        }
+
+        private void tbKeyIdentification2_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x15, 4);
+        }
+
+        private void tbKeyIdentification2Bkp_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x95, 4);
+        }
+
+        private void tbKeyIdentification3_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x1a, 4);
+        }
+
+        private void tbKeyIdentification3Bkp_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x9a, 4);
+        }
+
+        private void tbKeyIdentification4_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x20, 4);
+        }
+
+        private void tbKeyIdentification4Bkp_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0xa0, 4);
+        }
+
+        private void tbKeyIdentification5_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x25, 4);
+        }
+
+        private void tbKeyIdentification5Bkp_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0xa5, 4);
+        }
+
+        private void tbVIN_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x30, 17);
+        }
+
+        private void tbVINASCII_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x30, 17);
+        }
+
+        private void tbVINBkp_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0xb0, 17);
+        }
+
+        private void tbVINBkpASCII_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0xb0, 17);
+        }
+
+        private void tbPwdErrCnt_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0xf5, 4);
+        }
+
+       
     }
 }

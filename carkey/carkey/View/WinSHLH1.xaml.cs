@@ -63,6 +63,7 @@ namespace carkey.View
             else
                 this.tbManufacturerBkp.Background = new SolidColorBrush(Colors.Yellow);
 
+            this.tbVIN.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
             if (shlh1.CheckConsistencyVIN())
             {
                 this.tbVINBkp.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
@@ -370,10 +371,19 @@ namespace carkey.View
             Misc.DoUpdateArray(m_decryptbytes, 0xad, 2, this.tbManufacturer.Text);
         }
 
-        private void UpdatevinVIN()
+        private void UpdateVIN()
         {
-            Misc.DoUpdateArray(m_decryptbytes, 0x1f, 17, this.tbVIN.Text);
-            Misc.DoUpdateArray(m_decryptbytes, 0xaf, 17, this.tbVIN.Text);
+            int i = 0;
+            int field_idx = 0x1f, field_idx_bkp = 0xaf, field_len = 17;
+
+            System.Text.ASCIIEncoding ASCII = new System.Text.ASCIIEncoding();
+            Byte[] vin = ASCII.GetBytes(this.tbVINASCII.Text);
+
+            for (i = 0; i < field_len; i++)
+            {
+                this.m_decryptbytes[field_idx + i] = vin[i];
+                this.m_decryptbytes[field_idx_bkp + i] = vin[i];
+            }
         }
 
         private void UpdatevinKeyIdentification1()
@@ -440,7 +450,7 @@ namespace carkey.View
             UpdatePin();
             UpdateSecretKey();
             UpdateManufacturer();
-            UpdatevinVIN();
+            UpdateVIN();
             UpdatevinKeyIdentification1();
             UpdatevinKeyIdentification2();
             UpdatevinKeyIdentification3();

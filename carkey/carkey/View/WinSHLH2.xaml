@@ -38,59 +38,61 @@
             <StackPanel Grid.Row="1" Grid.Column="1">
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="PIN：" Width="100" />
-                    <TextBox Name="tbPin" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
-                    <TextBox Name="tbPinBkp" TextWrapping="Wrap" IsReadOnly="True" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbPin" TextWrapping="Wrap" TextAlignment="Left" GotFocus="tbPin_GotFocus" Width="250" Height="auto" />
+                    <TextBox Name="tbPinBkp" TextWrapping="Wrap" IsReadOnly="True" GotFocus="tbPinBkp_GotFocus"  TextAlignment="Left" Width="250" Height="auto" />
                 </StackPanel>
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="秘钥码：" Width="100" />
-                    <TextBox Name="tbSecretKey" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
-                    <TextBox Name="tbSecretKeyBkp" TextWrapping="Wrap" IsReadOnly="True" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbSecretKey" TextWrapping="Wrap" TextAlignment="Left" GotFocus="tbSecretKey_GotFocus"  Width="250" Height="auto" />
+                    <TextBox Name="tbSecretKeyBkp" TextWrapping="Wrap" IsReadOnly="True" GotFocus="tbSecretKeyBkp_GotFocus"  TextAlignment="Left" Width="250" Height="auto" />
                 </StackPanel>
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="钥匙标识码1：" Width="100" />
-                    <TextBox Name="tbKeyIdentification1" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
-                    <TextBox Name="tbKeyIdentification1Bkp" TextWrapping="Wrap" IsReadOnly="True" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification1" TextWrapping="Wrap" TextAlignment="Left" GotFocus="tbKeyIdentification1_GotFocus"  Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification1Bkp" TextWrapping="Wrap" IsReadOnly="True" GotFocus="tbKeyIdentification1Bkp_GotFocus"  TextAlignment="Left" Width="250" Height="auto" />
                 </StackPanel>
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="钥匙标识码2：" Width="100" />
-                    <TextBox Name="tbKeyIdentification2" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
-                    <TextBox Name="tbKeyIdentification2Bkp" TextWrapping="Wrap" IsReadOnly="True" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification2" TextWrapping="Wrap" TextAlignment="Left" GotFocus="tbKeyIdentification2_GotFocus"  Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification2Bkp" TextWrapping="Wrap" IsReadOnly="True" GotFocus="tbKeyIdentification2Bkp_GotFocus" TextAlignment="Left" Width="250" Height="auto" />
                 </StackPanel>
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="钥匙标识码3：" Width="100" />
-                    <TextBox Name="tbKeyIdentification3" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
-                    <TextBox Name="tbKeyIdentification3Bkp" TextWrapping="Wrap" IsReadOnly="True" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification3" TextWrapping="Wrap" TextAlignment="Left" GotFocus="tbKeyIdentification3_GotFocus"  Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification3Bkp" TextWrapping="Wrap" IsReadOnly="True" GotFocus="tbKeyIdentification3Bkp_GotFocus" TextAlignment="Left" Width="250" Height="auto" />
                 </StackPanel>
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="钥匙标识码4：" Width="100" />
-                    <TextBox Name="tbKeyIdentification4" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
-                    <TextBox Name="tbKeyIdentification4Bkp" TextWrapping="Wrap" IsReadOnly="True" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification4" TextWrapping="Wrap" TextAlignment="Left" GotFocus="tbKeyIdentification4_GotFocus"  Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification4Bkp" TextWrapping="Wrap" IsReadOnly="True" GotFocus="tbKeyIdentification4Bkp_GotFocus" TextAlignment="Left" Width="250" Height="auto" />
                 </StackPanel>
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="钥匙标识码5：" Width="100" />
-                    <TextBox Name="tbKeyIdentification5" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
-                    <TextBox Name="tbKeyIdentification5Bkp" TextWrapping="Wrap" IsReadOnly="True" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification5" TextWrapping="Wrap" TextAlignment="Left" GotFocus="tbKeyIdentification5_GotFocus"  Width="250" Height="auto" />
+                    <TextBox Name="tbKeyIdentification5Bkp" TextWrapping="Wrap" IsReadOnly="True" GotFocus="tbKeyIdentification5Bkp_GotFocus" TextAlignment="Left" Width="250" Height="auto" />
                 </StackPanel>
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="车架号：" Width="100" />
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                        <TextBox Name="tbVIN" TextWrapping="Wrap"  TextAlignment="Left" Width="250" Height="auto" />
-                        <TextBox Name="tbVINASCII" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                        <TextBox Name="tbVIN" TextWrapping="Wrap" IsReadOnly="True" TextAlignment="Left" GotFocus="tbVIN_GotFocus"  Width="250" Height="auto" />
+                        <TextBox Name="tbVINASCII" TextWrapping="Wrap" TextAlignment="Left" Width="250" GotFocus="tbVINASCII_GotFocus"  Height="auto" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                        <TextBox Name="tbVINBkp" IsReadOnly="True"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
-                        <TextBox Name="tbVINBkpASCII" IsReadOnly="True"  TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                        <TextBox Name="tbVINBkp" IsReadOnly="True"  TextWrapping="Wrap" TextAlignment="Left" GotFocus="tbVINBkp_GotFocus"  Width="250" Height="auto" />
+                        <TextBox Name="tbVINBkpASCII" IsReadOnly="True"  TextWrapping="Wrap" TextAlignment="Left" GotFocus="tbVINBkpASCII_GotFocus"  Width="250" Height="auto" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="密码错误码：" Width="100" />
-                    <TextBox Name="tbPwdErrCnt" TextWrapping="Wrap" TextAlignment="Left" Width="250" Height="auto" />
+                    <TextBox Name="tbPwdErrCnt" TextWrapping="Wrap" TextAlignment="Left" GotFocus="tbPwdErrCnt_GotFocus"  Width="250" Height="auto" />
                     <Button Name="btnPwdErrCnt" Content="重置" Click="btnPwdErrCnt_Click"></Button>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
-                    <TextBox Name="tbInfo" Text="" IsReadOnly="True" TextWrapping="Wrap" TextAlignment="Left" Width="350" Height="200" />
+                    <ScrollViewer Width="350" Height="200">
+                        <TextBlock Name="tbInfo" Text="" TextWrapping="Wrap" TextAlignment="Left"  />
+                    </ScrollViewer>
                 </StackPanel>
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Button Name="btnFix"   Content="修复" FontSize="20" Height="80" Width="130" Margin="20 0 0 0" Click="btnFix_Click" />

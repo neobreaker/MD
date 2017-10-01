@@ -54,7 +54,7 @@
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="车架号：" Width="100" />
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                        <TextBox Name="tbVIN" TextWrapping="Wrap" GotFocus="tbVIN_GotFocus"  TextAlignment="Left" Width="250" Height="auto" />
+                        <TextBox Name="tbVIN" TextWrapping="Wrap" GotFocus="tbVIN_GotFocus" IsReadOnly="True" TextAlignment="Left" Width="250" Height="auto" />
                         <TextBox Name="tbVINASCII" TextWrapping="Wrap" GotFocus="tbVINASCII_GotFocus" TextAlignment="Left" Width="250" Height="auto" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
