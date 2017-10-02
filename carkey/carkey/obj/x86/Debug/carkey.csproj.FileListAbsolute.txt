@@ -60,3 +60,9 @@ F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinSHLH1.baml
 F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinSHLH1.g.cs
 F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinSHLH2.g.cs
 F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinSHLH2.baml
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinSiemens.g.cs
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinSiemens.baml
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinDelphi1.baml
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinDelphi2.baml
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinDelphi1.g.cs
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinDelphi2.g.cs

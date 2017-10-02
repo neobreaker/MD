@@ -61,6 +61,21 @@ namespace carkey
                         winshlh2.Show();
                         this.Close();
                         break;
+                    case "德尔福一代":
+                        WinDelphi1 windelphi1 = new WinDelphi1();
+                        windelphi1.Show();
+                        this.Close();
+                        break;
+                    case "德尔福二代":
+                        WinDelphi2 windelphi2 = new WinDelphi2();
+                        windelphi2.Show();
+                        this.Close();
+                        break;
+                    case "西门子":
+                        WinSiemens winsms = new WinSiemens();
+                        winsms.Show();
+                        this.Close();
+                        break;
                 }
                 
             }

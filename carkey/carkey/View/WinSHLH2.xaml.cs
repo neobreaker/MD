@@ -28,8 +28,7 @@ namespace carkey.View
         private byte[] m_encryptbytes = new byte[BYTE_BUFF_SIZE];
         private byte[] m_decryptbytes = new byte[BYTE_BUFF_SIZE];
 
-        private Model.ModelSHLH2 m_shlh2 = null
-;
+        private Model.ModelSHLH2 m_shlh2 = null;
 
         public WinSHLH2()
         {

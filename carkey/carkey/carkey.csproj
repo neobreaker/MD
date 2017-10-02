@@ -67,8 +67,15 @@
     <Compile Include="Model\ModelSHLC.cs" />
     <Compile Include="Model\ModelSHLH1.cs" />
     <Compile Include="Model\ModelSHLH2.cs" />
+    <Compile Include="Model\ModelSiemens.cs" />
     <Compile Include="UC\UCHexBox.xaml.cs">
       <DependentUpon>UCHexBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinDelphi1.xaml.cs">
+      <DependentUpon>WinDelphi1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinDelphi2.xaml.cs">
+      <DependentUpon>WinDelphi2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WinSH46.xaml.cs">
       <DependentUpon>WinSH46.xaml</DependentUpon>
@@ -81,6 +88,9 @@
     </Compile>
     <Compile Include="View\WinSHLH2.xaml.cs">
       <DependentUpon>WinSHLH2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinSiemens.xaml.cs">
+      <DependentUpon>WinSiemens.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +108,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\WinDelphi1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WinDelphi2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\WinSH46.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\WinSHLH2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WinSiemens.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
