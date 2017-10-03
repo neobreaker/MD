@@ -79,6 +79,7 @@ namespace carkey.Model
         public byte[] factorydate = new byte[6];
         public byte factorydate_ver;
         public string factorydate_str;
+        public string factorydate_ascii;
 
         public byte[] softwareversion = new byte[11];
         public byte softwareversion_ver;
@@ -233,6 +234,7 @@ namespace carkey.Model
             {
                 factorydate[j] = bin[i++];
             }
+            this.factorydate_ascii = System.Text.Encoding.ASCII.GetString(this.factorydate);
 
             i = 0x84;
             softwareversion_ver = bin[i++];
@@ -349,7 +351,7 @@ namespace carkey.Model
             return check_sum;
         }
 
-        private byte CheckSumSiemens(byte[] data, int len)
+        public byte CheckSumSiemens(byte[] data, int len)
         {
             int i = 0;
             int num = 0;
