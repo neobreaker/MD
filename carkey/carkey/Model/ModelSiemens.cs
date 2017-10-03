@@ -62,7 +62,11 @@ namespace carkey.Model
         public string vin_str;
         public string vin_ascii;
 
-        public byte[] immobilisercode1 = new byte[13];
+        public byte[] field2 = new byte[2];
+        public byte field2_ver;
+        public string field2_str;
+
+        public byte[] immobilisercode1 = new byte[10];
         public byte immobilisercode1_ver;
         public string immobilisercode1_str;
         public string immobilisercode1_ascii;
@@ -81,7 +85,7 @@ namespace carkey.Model
         public string factorydate_str;
         public string factorydate_ascii;
 
-        public byte[] softwareversion = new byte[11];
+        public byte[] softwareversion = new byte[10];
         public byte softwareversion_ver;
         public string softwareversion_str;
 
@@ -206,8 +210,15 @@ namespace carkey.Model
             this.vin_ascii = System.Text.Encoding.ASCII.GetString(this.vin);
 
             i = 0x60;
+            field2_ver = bin[i++];
+            for (j = 0; j < 2; j++)             //len
+            {
+                field2[j] = bin[i++];
+            }
+
+            i = 0x63;
             immobilisercode1_ver = bin[i++];
-            for (j = 0; j < 13; j++)             //len
+            for (j = 0; j < 10; j++)             //len
             {
                 immobilisercode1[j] = bin[i++];
             }
@@ -238,7 +249,7 @@ namespace carkey.Model
 
             i = 0x84;
             softwareversion_ver = bin[i++];
-            for (j = 0; j < 11; j++)             //len
+            for (j = 0; j < 10; j++)             //len
             {
                 softwareversion[j] = bin[i++];
             }
@@ -314,11 +325,12 @@ namespace carkey.Model
             errcode3_str = Convert.ToString(errcode3, 16);
             errcode4_str = Convert.ToString(errcode4, 16);
             Misc.ConvertPrintHex(vin, 17, ref vin_str);
-            Misc.ConvertPrintHex(immobilisercode1, 13, ref immobilisercode1_str);
+            Misc.ConvertPrintHex(field2, 2, ref field2_str);
+            Misc.ConvertPrintHex(immobilisercode1, 10, ref immobilisercode1_str);
             Misc.ConvertPrintHex(immobilisercode2, 8, ref immobilisercode2_str);
             Misc.ConvertPrintHex(field1, 5, ref field1_str);
             Misc.ConvertPrintHex(factorydate, 6, ref factorydate_str);
-            Misc.ConvertPrintHex(softwareversion, 11, ref softwareversion_str);
+            Misc.ConvertPrintHex(softwareversion, 10, ref softwareversion_str);
 
             //back up
             Misc.ConvertPrintHex(keyidentification1_bkp, 4, ref keyidentification1_str_bkp);
@@ -438,6 +450,11 @@ namespace carkey.Model
             return (CheckSumSiemens(this.vin, this.vin.Length) == this.vin_ver) ? true : false;
         }
 
+        public bool CheckField2()
+        {
+            return (CheckSumSiemens(this.field2, this.field2.Length) == this.field2_ver) ? true : false;
+        }
+
         public bool CheckImmobiliserCode1()
         {
             return (CheckSumSiemens(this.immobilisercode1, this.immobilisercode1.Length) == this.immobilisercode1_ver) ? true : false;
@@ -460,7 +477,7 @@ namespace carkey.Model
 
         public bool CheckSoftwareVersion()
         {
-            return (CheckSumSiemens(this.softwareversion, this.softwareversion.Length) == this.softwareversion_ver) ? true : false;
+            return (CheckSumSiemens(this.softwareversion, this.softwareversion.Length-1) == this.softwareversion_ver) ? true : false;
         }
 
         //back up

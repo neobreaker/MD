@@ -120,10 +120,17 @@
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
-                    <Label Content="域1：" Width="100" />
-                    <TextBox Name="tbField1" TextWrapping="Wrap" GotFocus="tbField1_GotFocus"  TextAlignment="Left" Width="250" Height="auto" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Label Content="域1：" Width="100" />
+                        <TextBox Name="tbField1" TextWrapping="Wrap" GotFocus="tbField1_GotFocus"  TextAlignment="Left" Width="250" Height="auto" />
+                    </StackPanel>
+                    <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Label Content="域2：" Width="100" />
+                        <TextBox Name="tbField2" TextWrapping="Wrap" GotFocus="tbField2_GotFocus"  TextAlignment="Left" Width="250" Height="auto" />
+                    </StackPanel>
                 </StackPanel>
+                
                 <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Left">
                     <Label Content="车架号：" Width="100" />
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left">

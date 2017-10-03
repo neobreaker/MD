@@ -114,6 +114,12 @@ namespace carkey.View
                 this.tbvinASCII.Background = new SolidColorBrush(Colors.Red);
             }
 
+
+            if (m_siemens.CheckField2())
+                this.tbField2.Background = new SolidColorBrush(Colors.White);
+            else
+                this.tbField2.Background = new SolidColorBrush(Colors.Red);
+
             if (m_siemens.CheckImmobiliserCode1())
             {
                 this.tbImmobiliserCode1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFD2D2D2"));
@@ -311,6 +317,7 @@ namespace carkey.View
             this.tbErrCode4.Text = m_siemens.errcode4_str;
             this.tbvin.Text = m_siemens.vin_str;
             this.tbvinASCII.Text = m_siemens.vin_ascii;
+            this.tbField2.Text = m_siemens.field2_str;
             this.tbImmobiliserCode1.Text = m_siemens.immobilisercode1_str;
             this.tbImmobiliserCode1ASCII.Text = m_siemens.immobilisercode1_ascii;
             this.tbImmobiliserCode2.Text = m_siemens.immobilisercode2_str;
@@ -880,9 +887,17 @@ namespace carkey.View
             this.m_decryptbytes[field_ver_idx] = m_siemens.CheckSumSiemens(manufacturer, field_len);
         }
 
+        private void UpdateField2()
+        {
+            int field_idx = 0x61, field_ver_idx = 0x60, field_len = 2;
+
+            UpdateField(field_idx, field_ver_idx, this.tbField2.Text, field_len);
+        }
+
+
         private void UpdateImmobiliserCode1()
         {
-            int field_idx = 0x61, field_ver_idx = 0x60, field_len = 13;
+            int field_idx = 0x64, field_ver_idx = 0x63, field_len = 10;
 
             System.Text.ASCIIEncoding ASCII = new System.Text.ASCIIEncoding();
             Byte[] data = ASCII.GetBytes(this.tbImmobiliserCode1ASCII.Text);
@@ -933,7 +948,7 @@ namespace carkey.View
 
         private void UpdateSoftwareVersion()
         {
-            int field_idx = 0x85, field_ver_idx = 0x84, field_len = 11;
+            int field_idx = 0x85, field_ver_idx = 0x84, field_len = 10;
 
             UpdateField(field_idx, field_ver_idx, this.tbSoftwareVersion.Text, field_len);
         }
@@ -953,6 +968,7 @@ namespace carkey.View
             UpdateErrCode3();
             UpdateErrCode4();
             UpdateVIN();
+            UpdateField2();
             UpdateImmobiliserCode1();
             UpdateImmobiliserCode2();
             UpdateField1();
@@ -1125,14 +1141,19 @@ namespace carkey.View
             this.uchbDecrypy.Select(0x4f, 17);
         }
 
+        private void tbField2_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.uchbDecrypy.Select(0x61, 2);
+        }
+
         private void tbImmobiliserCode1_GotFocus(object sender, RoutedEventArgs e)
         {
-            this.uchbDecrypy.Select(0x61, 13);
+            this.uchbDecrypy.Select(0x64, 10);
         }
 
         private void tbImmobiliserCode1ASCII_GotFocus(object sender, RoutedEventArgs e)
         {
-            this.uchbDecrypy.Select(0x61, 13);
+            this.uchbDecrypy.Select(0x64, 10);
         }
 
         private void tbImmobiliserCode2_GotFocus(object sender, RoutedEventArgs e)
@@ -1163,7 +1184,7 @@ namespace carkey.View
 
         private void tbSoftwareVersion_GotFocus(object sender, RoutedEventArgs e)
         {
-            this.uchbDecrypy.Select(0x85, 11);
+            this.uchbDecrypy.Select(0x85, 10);
         }
 
     }
