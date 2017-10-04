@@ -76,6 +76,16 @@ namespace carkey
                         winsms.Show();
                         this.Close();
                         break;
+                    case "重庆集诚（长安奔奔）":
+                        WinCQJC1 wincqjc1 = new WinCQJC1();
+                        wincqjc1.Show();
+                        this.Close();
+                        break;
+                    case "重庆集诚（奔腾B50）":
+                        WinCQJC2 wincqjc2 = new WinCQJC2();
+                        wincqjc2.Show();
+                        this.Close();
+                        break;
                 }
                 
             }

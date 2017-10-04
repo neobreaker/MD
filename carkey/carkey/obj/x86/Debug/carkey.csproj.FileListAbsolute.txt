@@ -66,3 +66,7 @@ F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinDelphi1.baml
 F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinDelphi2.baml
 F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinDelphi1.g.cs
 F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinDelphi2.g.cs
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinCQJC1.g.cs
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinCQJC1.baml
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinCQJC2.g.cs
+F:\md\MD\carkey\carkey\obj\x86\Debug\View\WinCQJC2.baml
